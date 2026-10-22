@@ -1,3 +1,4 @@
+import { RESUME_URL } from '../site'
 import type { Link, Profile } from '../types'
 import { HeroScene } from './HeroScene'
 import { Typewriter } from './Typewriter'
@@ -45,6 +46,17 @@ export function Hero({ profile, links }: { profile: Profile; links: Link[] }) {
             className="btn-fill rounded-lg border border-line bg-ink/40 px-6 py-3 font-semibold text-white backdrop-blur hover:-translate-y-0.5 hover:border-accent hover:text-ink"
           >
             Get in touch
+          </a>
+          <a
+            href={RESUME_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="group inline-flex items-center gap-2 rounded-lg px-4 py-3 font-semibold text-accent-soft transition hover:-translate-y-0.5 hover:text-white"
+          >
+            <span className="link-draw pb-0.5">Resume</span>
+            <span aria-hidden="true" className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+              ↗
+            </span>
           </a>
         </div>
 

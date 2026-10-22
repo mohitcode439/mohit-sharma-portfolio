@@ -1,3 +1,4 @@
+import { RESUME_URL } from '../site'
 import type { Education, Profile } from '../types'
 import { Section } from './Section'
 
@@ -11,6 +12,18 @@ export function About({ profile, education }: { profile: Profile; education: Edu
               {paragraph}
             </p>
           ))}
+
+          <a
+            href={RESUME_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="reveal group inline-flex items-center gap-1.5 text-base font-semibold text-accent transition-colors hover:text-accent-soft"
+          >
+            <span className="link-draw pb-0.5">View my resume</span>
+            <span aria-hidden="true" className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+              ↗
+            </span>
+          </a>
 
           <div className="space-y-4 pt-4">
             {education.map((degree) => (
