@@ -1,0 +1,19 @@
+# Secrets and local settings: never commit
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Build output
+backend/target/
+frontend/dist/
+frontend/node_modules/
+
+# Logs and OS / editor files
+*.log
+.DS_Store
+Thumbs.db
+.idea/
+*.iml
+.vscode/

@@ -1,0 +1,52 @@
+# Defaults run locally with an in-memory H2 database (PostgreSQL mode), so no database install is needed.
+# Production overrides these through environment variables, e.g. SPRING_DATASOURCE_URL,
+# SPRING_DATASOURCE_USERNAME, SPRING_DATASOURCE_PASSWORD, PORTFOLIO_CORS_ALLOWED_ORIGINS, SPRING_MAIL_*.
+spring:
+  application:
+    name: portfolio-api
+  datasource:
+    url: jdbc:h2:mem:portfolio;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DEFAULT_NULL_ORDERING=HIGH
+    username: sa
+    password: ""
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate # Flyway owns the schema
+    properties:
+      hibernate.default_batch_fetch_size: 32
+  flyway:
+    locations: classpath:db/migration
+  mail:
+    properties:
+      mail.smtp.connectiontimeout: 5000
+      mail.smtp.timeout: 5000
+      mail.smtp.writetimeout: 5000
+
+server:
+  # Local runs only accept connections from this machine (no firewall prompt).
+  # The production container sets SERVER_ADDRESS=0.0.0.0 so the platform can reach it.
+  address: ${SERVER_ADDRESS:127.0.0.1}
+  port: ${PORT:8080}
+  compression:
+    enabled: true
+  forward-headers-strategy: framework # behind Render's proxy
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+
+portfolio:
+  cors:
+    allowed-origins:
+      - http://localhost:5173
+  contact:
+    # Where contact-form notifications are sent. Email is only sent when spring.mail.host is configured;
+    # messages are always stored in the database either way.
+    notify-email: ""
+    from-email: ""
