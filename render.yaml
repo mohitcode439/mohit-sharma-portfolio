@@ -1,0 +1,25 @@
+# Render Blueprint for the Spring Boot API (https://render.com/docs/blueprint-spec)
+# Database credentials are entered in the Render dashboard (sync: false), never committed.
+services:
+  - type: web
+    name: mohit-sharma-portfolio-api
+    runtime: docker
+    plan: free
+    region: singapore # same region as the Neon database (AWS ap-southeast-1)
+    rootDir: backend
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /actuator/health/liveness # app-only check: keeps the free database free to sleep
+    autoDeploy: true
+    # Only rebuild the API when backend files change (frontend commits are deployed by Netlify)
+    buildFilter:
+      paths:
+        - backend/**
+    envVars:
+      - key: SPRING_DATASOURCE_URL # e.g. jdbc:postgresql://<host>/<database>?sslmode=require
+        sync: false
+      - key: SPRING_DATASOURCE_USERNAME
+        sync: false
+      - key: SPRING_DATASOURCE_PASSWORD
+        sync: false
+      - key: PORTFOLIO_CORS_ALLOWED_ORIGINS # the Netlify site URL: https://mohitcode439.netlify.app
+        sync: false

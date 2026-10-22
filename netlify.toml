@@ -1,0 +1,28 @@
+# Netlify settings for the React frontend.
+# Set VITE_API_URL (the Render API URL) under Site configuration > Environment variables.
+[build]
+base = "frontend"
+command = "npm run build"
+publish = "dist"
+
+[build.environment]
+NODE_VERSION = "24"
+
+# File names under /assets contain a content hash, so browsers can cache them forever
+[[headers]]
+for = "/assets/*"
+[headers.values]
+Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+for = "/*"
+[headers.values]
+X-Content-Type-Options = "nosniff"
+Referrer-Policy = "strict-origin-when-cross-origin"
+X-Frame-Options = "DENY"
+
+# Single-page app: unknown paths fall back to index.html
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
