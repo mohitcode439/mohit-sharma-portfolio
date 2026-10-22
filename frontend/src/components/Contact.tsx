@@ -48,7 +48,7 @@ export function Contact({ email }: { email: string }) {
             Whether it's an opportunity, a project or a question about my work, I'd be glad to hear from you. Send a
             message using the form, or email me directly:
           </p>
-          <a href={`mailto:${email}`} className="mt-4 inline-block font-semibold break-all text-accent hover:text-accent-soft">
+          <a href={`mailto:${email}`} className="link-draw mt-4 inline-block pb-0.5 font-semibold break-all text-accent transition-colors hover:text-accent-soft">
             {email}
           </a>
         </div>

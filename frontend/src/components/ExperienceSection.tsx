@@ -19,11 +19,11 @@ export function ExperienceSection({ experience, achievements }: { experience: Ex
             <p className="text-sm text-muted">{job.location}</p>
             <ul className="mt-4 space-y-2 text-slate-300">
               {job.highlights.map((highlight) => (
-                <li key={highlight} className="flex gap-3">
-                  <span aria-hidden="true" className="mt-0.5 text-accent">
+                <li key={highlight} className="group flex gap-3">
+                  <span aria-hidden="true" className="mt-0.5 text-accent transition-transform duration-300 group-hover:translate-x-1">
                     ▹
                   </span>
-                  <span>{highlight}</span>
+                  <span className="transition-colors duration-300 group-hover:text-white">{highlight}</span>
                 </li>
               ))}
             </ul>

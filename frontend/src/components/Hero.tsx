@@ -18,10 +18,12 @@ export function Hero({ profile, links }: { profile: Profile; links: Link[] }) {
       <div aria-hidden="true" className="absolute inset-x-0 bottom-0 -z-10 h-40 bg-gradient-to-b from-transparent to-ink" />
 
       <div className="mx-auto w-full max-w-5xl px-5 py-20 sm:px-8">
-        <h1 className="animate-rise bg-gradient-to-r from-white via-white to-accent-soft bg-clip-text text-5xl font-extrabold tracking-tight text-transparent [animation-delay:80ms] sm:text-7xl">
+        {/* The gradient is twice as wide as the text; hovering slides it so the violet flows across */}
+        <h1 className="w-fit animate-rise bg-[linear-gradient(90deg,white_0%,white_30%,var(--color-accent-soft)_50%,white_70%,white_100%)] bg-[length:200%_100%] bg-left bg-clip-text text-5xl font-extrabold tracking-tight text-transparent transition-[background-position] duration-1000 ease-out [animation-delay:80ms] hover:bg-right sm:text-7xl">
           {profile.name}
         </h1>
-        <p className="mt-4 animate-rise text-2xl font-semibold text-slate-300 [animation-delay:160ms] sm:text-3xl">
+        {/* Two lines reserved on phones so longer phrases don't push the buttons while typing */}
+        <p className="mt-4 min-h-[2.6em] animate-rise text-2xl font-semibold text-slate-300 [animation-delay:160ms] sm:min-h-0 sm:text-3xl">
           I build <Typewriter phrases={roles} />
         </p>
         <p className="mt-6 max-w-xl animate-rise text-lg text-muted [animation-delay:240ms]">
@@ -31,13 +33,16 @@ export function Hero({ profile, links }: { profile: Profile; links: Link[] }) {
         <div className="mt-10 flex animate-rise flex-wrap gap-4 [animation-delay:320ms]">
           <a
             href="#projects"
-            className="rounded-lg bg-accent px-6 py-3 font-semibold text-ink shadow-[0_0_30px_-6px] shadow-accent transition hover:-translate-y-0.5 hover:bg-accent-soft"
+            className="btn-shine group inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3 font-semibold text-ink shadow-[0_0_30px_-6px] shadow-accent transition hover:-translate-y-0.5 hover:shadow-[0_0_40px_-4px]"
           >
             View my work
+            <span aria-hidden="true" className="-mr-1 w-0 overflow-hidden transition-all duration-300 group-hover:w-4">
+              →
+            </span>
           </a>
           <a
             href="#contact"
-            className="rounded-lg border border-line bg-ink/40 px-6 py-3 font-semibold text-white backdrop-blur transition hover:-translate-y-0.5 hover:border-accent"
+            className="btn-fill rounded-lg border border-line bg-ink/40 px-6 py-3 font-semibold text-white backdrop-blur hover:-translate-y-0.5 hover:border-accent hover:text-ink"
           >
             Get in touch
           </a>
@@ -50,9 +55,15 @@ export function Hero({ profile, links }: { profile: Profile; links: Link[] }) {
                 href={link.url}
                 target="_blank"
                 rel="noreferrer"
-                className="text-muted underline-offset-4 transition hover:text-white hover:underline"
+                className="link-draw group pb-0.5 text-muted transition-colors hover:text-white"
               >
-                {link.label} ↗
+                {link.label}{' '}
+                <span
+                  aria-hidden="true"
+                  className="inline-block transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                >
+                  ↗
+                </span>
               </a>
             </li>
           ))}
