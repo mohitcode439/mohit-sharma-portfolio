@@ -1,0 +1,158 @@
+{
+  "profile": {
+    "name": "Mohit Sharma",
+    "headline": "Software Engineer – Java Full Stack (Spring Boot, Microservices, React)",
+    "tagline": "I build reliable Java microservices and clean React frontends.",
+    "currentRole": "Specialist Programmer at Infosys",
+    "location": "India",
+    "email": "isharma.ms@gmail.com",
+    "avatarUrl": "https://mohitcode439.netlify.app/profile/avatar.jpg",
+    "about": [
+      "I'm a Software Engineer at Infosys, where I build microservices with Java and Spring Boot. I've built services that mock external APIs, so teams can develop and test without depending on live third-party endpoints, which also reduces API costs. I've contributed to test automation with Playwright and Cucumber that cut testing time and effort, and I've integrated MoEngage to deliver notifications across SMS, Email, Push and RCS.",
+      "I graduated from NIT Patna in 2025 with a B.Tech in Electrical Engineering and a Minor in Computer Science and Engineering. I enjoy problem solving and have solved 500+ data structures and algorithms problems. On the frontend I work with React and TypeScript, and I'm currently exploring Spring AI for building AI-powered Java applications."
+    ]
+  },
+  "links": [
+    {
+      "label": "GitHub",
+      "url": "https://github.com/mohitcode439"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/mohit-sharma-8a780a223"
+    },
+    {
+      "label": "LeetCode",
+      "url": "https://leetcode.com/u/mohitcode439"
+    },
+    {
+      "label": "GeeksforGeeks",
+      "url": "https://www.geeksforgeeks.org/user/mohitsharma10102001/"
+    }
+  ],
+  "experience": [
+    {
+      "company": "Infosys Limited",
+      "title": "Specialist Programmer",
+      "location": "India",
+      "start": "2025-10",
+      "end": null,
+      "highlights": [
+        "Build and maintain Java/Spring Boot microservices exposing REST APIs for a client application.",
+        "Built services that mock external third-party APIs for development and testing, reducing dependency on live endpoints and lowering API usage costs.",
+        "Simulated success, error and timeout responses from external services to enable parallel development and testing.",
+        "Contributed to end-to-end and regression test automation using Playwright and Cucumber (BDD), reducing testing time and manual effort.",
+        "Integrated the MoEngage customer-engagement platform to deliver notifications across SMS, Email, Push and RCS channels."
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "category": "Languages",
+      "items": [
+        "Java",
+        "JavaScript",
+        "TypeScript",
+        "SQL",
+        "Python",
+        "C++",
+        "HTML",
+        "CSS"
+      ]
+    },
+    {
+      "category": "Backend",
+      "items": [
+        "Spring Boot",
+        "Spring Framework",
+        "Spring AI",
+        "REST APIs",
+        "Microservices",
+        "Node.js",
+        "Express.js"
+      ]
+    },
+    {
+      "category": "Frontend",
+      "items": [
+        "React",
+        "Redux",
+        "Tailwind CSS",
+        "Three.js"
+      ]
+    },
+    {
+      "category": "Testing",
+      "items": [
+        "Playwright",
+        "Cucumber (BDD)",
+        "API Virtualization / Service Mocking",
+        "WireMock",
+        "JUnit",
+        "Mockito"
+      ]
+    },
+    {
+      "category": "Databases",
+      "items": [
+        "MongoDB",
+        "SQL"
+      ]
+    },
+    {
+      "category": "Tools & Platforms",
+      "items": [
+        "Git",
+        "GitHub",
+        "MoEngage",
+        "Postman",
+        "Maven",
+        "Jenkins"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Personal Portfolio (Java Full Stack)",
+      "description": "Spring Boot REST API with Spring Data JPA, Flyway-managed PostgreSQL, Bean Validation with RFC 9457 error responses, OpenAPI docs and Actuator health checks. React + TypeScript frontend that renders instantly from a bundled snapshot and syncs live API data. Tested with JUnit 5, Mockito, MockMvc and Vitest, with GitHub Actions CI and Docker deployment.",
+      "stack": [
+        "Java 25",
+        "Spring Boot 4",
+        "PostgreSQL",
+        "React 19",
+        "TypeScript",
+        "Docker"
+      ],
+      "imageUrl": "https://mohitcode439.netlify.app/projects/portfolio.png",
+      "liveUrl": "https://mohitcode439.netlify.app/",
+      "githubUrl": "https://github.com/mohitcode439/mohit-sharma-portfolio"
+    },
+    {
+      "name": "Smart Health Monitoring and Emergency Response",
+      "description": "Multi-class logistic regression model that classifies abnormal health conditions from heart rate, body temperature and SpO2 readings.",
+      "stack": [
+        "Python",
+        "Pandas",
+        "NumPy",
+        "Scikit-learn"
+      ],
+      "imageUrl": null,
+      "liveUrl": null,
+      "githubUrl": null
+    }
+  ],
+  "education": [
+    {
+      "institution": "National Institute of Technology (NIT) Patna",
+      "degree": "B.Tech, Electrical Engineering",
+      "minor": "Computer Science and Engineering (IoT)",
+      "startYear": 2021,
+      "endYear": 2025,
+      "cgpa": "8.22/10"
+    }
+  ],
+  "achievements": [
+    "Solved 500+ Data Structures and Algorithms problems on LeetCode and GeeksforGeeks.",
+    "MoEngage Implementation Expert Certification – MoEngage"
+  ]
+}
